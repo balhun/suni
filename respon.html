@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reszponzív</title>
+    <style>
+        body { background-color: burlywood; }
+        #nav {
+            position: relative;
+            background-color: #333;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        #nav a {
+            display: inline-block;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+        #nav a:hover {
+            background-color: lightgrey;
+            color: black;
+        }
+        #nav a.selected {
+            background-color: light;
+        }
+        #nav #ham { display: none; }
+        #nav #menu {display: block; }
+        #main {
+            width: 90%; margin: 0px auto;
+            background-color: white;
+            border: 1pxs solid black;
+            padding: 10px;
+        }
+        #row { display: flex; align-items: flex-end; }
+        #d1, #d2, #d3 {
+            width: 33%;
+            border: 1px solid lightgray;
+            text-align: center;
+            padding: 5px;
+        }
+        .kepek {
+            display: flex;
+            gap: 5px;
+        }
+
+        img { width: 100%; }
+
+        @media (max-width: 1200px) {
+            body{ background-color: lightpink; }
+            #main { width: 90%; }
+        }
+        
+        @media (max-width: 900px) {
+            body { background-color: lightseagreen; }
+            #nav #ham {display: inline-block}
+            #nav #menu { display: none; }
+            #nav #menu.show { display: block; position: absolute;}
+            #nav #menu.show a { display: block; }
+            #row { display: block; }
+            #d1, #d2, #d3 { width: 100%; }
+            #main { width: 90%; }
+        }
+    </style>
+    <script>
+        function menu() {
+            let m = document.getElementById("menu");
+            if (m.className == "") m.className = "show"; else m.className = "";
+        }
+    </script>
+</head>
+<body>
+
+    <div id="nav">
+        <a href="#" id="ham" onclick="menu();" >&nbsp;</a>
+        <div id="menu" class="">
+            <a href="#" class="selected">Kezdőlap</a>
+            <a href="#">Szabályok</a>
+            <a href="#">Játék 1</a>
+            <a href="#">Játék 2</a>
+            <a href="#">Játék 3</a>
+            <a href="#">Játék 4</a>
+            <a href="#">Játék</a>
+            <a href="#nevjegy">Névjegy</a>
+        </div>
+    </div>
+
+    <div id="main">
+        <div id="row">
+            <div id="d1">Szöveg</div>
+            <div id="d2">Szöveg</div>
+            <div id="d3">Szöveg</div>
+        </div>
+        <img src="sun.jpg">
+        <div class="kepek">
+            <img src="sun.jpg">
+            <img src="sun.jpg">
+            <img src="sun.jpg">
+        </div>
+        <div class="kepek">
+            <img src="sun.jpg">
+            <img src="sun.jpg">
+            <img src="sun.jpg">
+        </div>
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic minima alias eos odio blanditiis. Alias, aut illo soluta adipisci animi minima iusto accusantium dolore ipsam minus cupiditate amet dignissimos ipsa?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic minima alias eos odio blanditiis. Alias, aut illo soluta adipisci animi minima iusto accusantium dolore ipsam minus cupiditate amet dignissimos ipsa?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic minima alias eos odio blanditiis. Alias, aut illo soluta adipisci animi minima iusto accusantium dolore ipsam minus cupiditate amet dignissimos ipsa?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic minima alias eos odio blanditiis. Alias, aut illo soluta adipisci animi minima iusto accusantium dolore ipsam minus cupiditate amet dignissimos ipsa?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic minima alias eos odio blanditiis. Alias, aut illo soluta adipisci animi minima iusto accusantium dolore ipsam minus cupiditate amet dignissimos ipsa?</p>
+        </div>
+        <a name="Névjegy"></a>
+        <div>
+            Készítette: 12/A, 2024.05.17.
+        </div>
+    </div>
+</body>
+</html>
